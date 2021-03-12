@@ -1,0 +1,39 @@
+let movies = `{
+    "Movies":
+    [{
+    "movieName": "A Star is Born",
+    "image": "img/movie1.PNG",
+    "description": "Lady Gaga and the guy from the Hangover ",
+    "likes": 3
+    },
+{
+    "movieName": "Halloween",
+    "image": "img/movie2.PNG",
+    "description": "Big Knife guy",
+    "likes": 1
+},
+{
+    "movieName": "First Man",
+    "image": "img/movie3.PNG",
+    "description": "But not the last man",
+    "likes": 5
+}, 
+{
+    "movieName": "El Something",
+    "image": "img/movie4.PNG",
+    "description": "El description",
+    "likes": 2
+},
+{
+    "movieName": "Mandy",
+    "image": "img/movie5.PNG",
+    "description": "Looks like stranger things",
+    "likes": 7
+},
+{
+    "movieName": "Crazy Rich Asians",
+    "image": "img/movie6.PNG",
+    "description": "Featuring that guy whose in loads of movies/tv shows but I still cant remember his name",
+    "likes": 1
+}]
+}`
