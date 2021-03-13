@@ -33,6 +33,8 @@ function generateHTML(){
 return cardGenerator
 }
 
+
+
 document.getElementById("content").innerHTML += generateHTML();
 
 let likeBtns = document.querySelectorAll("#likeBtn");
@@ -56,17 +58,8 @@ sortBtn.addEventListener("click", function(){
   console.log(array)
 })
 
-function sort_array_by(array, sort, desc){
-  array.sort(function(a, b){
-    if (a[sort] < b[sort]) return -1;
-    if (a[sort] > b[sort]) return 1;
-    return 0;
-  });
-  if(desc) array.reverse();
-  return array;
-}
 
-function funkyfunction(){
+function funkyfunction(array){
  let list_items = document.querySelectorAll("#likeValue");
 //  list.innerHTML = ""
  for (let i = 0; i < list_items.length; i++){
@@ -75,4 +68,5 @@ function funkyfunction(){
  }
  return array
 }
-funkyfunction();
+let array = funkyfunction();
+console.log(array);
