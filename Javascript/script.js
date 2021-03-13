@@ -92,7 +92,9 @@ sortBtn.addEventListener("click", function(){
   for (i = 0; i < currentLikes.length; i++){
   let aa = currentLikes.item(i);
   let bb = parseInt(aa);
-  let cc = aa.parentNode;}
+  console.log(aa);
+  // let cc = aa.parentNode
+  ;}
 })
 
 
