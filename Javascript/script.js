@@ -50,26 +50,29 @@ likeBtns.forEach(function(currentBtn){ // we take the button #like, the forEach 
   })
 })
 
-sortBtn.addEventListener("click", function(){ 
-  var currentLikes = document.querySelectorAll("#likeValue"); //am able to access them through this
-  var dd = currentLikes.children; // trying to get the real-time like Values.
-  console.log(dd);
-  for (i = 0; i < currentLikes.length; i++){
-  var aa = currentLikes.item(i); //iterating through them trying to store them in an array or list
-  console.log(bb);
-  }
+let desc= false;
+sortBtn.addEventListener("click", function(){
+  let array = sort_array_by(funkyfunction(), "likes", desc)
+  console.log(array)
 })
 
-function whatvs(id){
-var currentLikes = document.querySelectorAll("#likeValue");
-for (i = 0; i < currentLikes.length; i++){
-  var aa = currentLikes.item(i);
-  let bb = aa.innerHTML;
-  console.log(aa);
-  localStorage.setItem("key", aa)
-  localStorage.getItem("key");
-  }
-  return aa
+function sort_array_by(array, sort, desc){
+  array.sort(function(a, b){
+    if (a[sort] < b[sort]) return -1;
+    if (a[sort] > b[sort]) return 1;
+    return 0;
+  });
+  if(desc) array.reverse();
+  return array;
 }
-whatvs();
 
+function funkyfunction(){
+ let list_items = document.querySelectorAll("#likeValue");
+//  list.innerHTML = ""
+ for (let i = 0; i < list_items.length; i++){
+   var array = list_items[i]
+   console.log(array)
+ }
+ return array
+}
+funkyfunction();
