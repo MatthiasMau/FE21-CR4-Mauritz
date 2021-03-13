@@ -47,69 +47,29 @@ likeBtns.forEach(function(currentBtn){ // we take the button #like, the forEach 
       // console.log(typeof likedValue);
       likedValue = parseInt(likedValue); //return it as an int because JSON. Need to regrab the the number of likes, and make that string = int + 1 every time eventlistener is called
       this.parentNode.querySelector("#likeValue").innerHTML = likedValue + 1;
-      let currentLikeKey = this.parentNode.querySelector("movieCard");
-      let currentLikeValue = likedValue + 1;
-      localStorage.setItem(currentLikeKey ,JSON.stringify(currentLikeValue))
   })
 })
 
-
-function sortByScore(){
-    for(i in movieData.Movies){
-      let likesArray = [movieData.Movies[i].likes];
-      let resultArray = likesArray.concat()
-      let aa = document.querySelector("#likeValue");
-      console.log(aa)
-    }
-    // console.log("hello")
-  // let cardGenerator = "";
-  // for (i in movieData.Movies){
-  //   cardGenerator += `
-  //   <div id="movieCard" class="card bg-dark mb-3" style="max-width: 540px;">
-  //     <div class="row g-0">
-  //       <div class="col-md-4">
-  //         <img src="${movieData.Movies[i].image}" alt="movie image failed to load">
-  //       </div>
-  //       <div class="col-md-8">
-  //         <div class="card-body">
-  //             <h5 id="movieTitle" class="card-title text-white">${movieData.Movies[i].movieTitle}</h5>
-  //             <p class="card-text text-white">${movieData.Movies[i].description}</p>
-  //             <p class="card-text text-danger">${movieData.Movies[i].genre}</p>
-  //             <span id="likeValue" class="bg-success text-white rounded p-1">${movieData.Movies[i].likes}</span><br><br>
-  //             <p id="likeBtn" class="btn btn-success like">Did You like this movie?</p>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   </div>
-  //   `
-// }
-// document.getElementById("content").innerHTML = cardGenerator;
-  }
-
-
-sortBtn.addEventListener("click", function(){
-  let currentLikes = document.querySelectorAll("#likeValue");
+sortBtn.addEventListener("click", function(){ 
+  var currentLikes = document.querySelectorAll("#likeValue"); //am able to access them through this
+  var dd = currentLikes.children; // trying to get the real-time like Values.
+  console.log(dd);
   for (i = 0; i < currentLikes.length; i++){
-  let aa = currentLikes.item(i);
-  let bb = parseInt(aa);
-  console.log(aa);
-  // let cc = aa.parentNode
-  ;}
+  var aa = currentLikes.item(i); //iterating through them trying to store them in an array or list
+  console.log(bb);
+  }
 })
 
-
-
-
-
-
-
-  // likeBtns.forEach(function(currentBtn){
-  //   currentBtn.addEventListener("click", function(){
-  //     for (i in movieData.Movies){
-  //       // console.log(movieData.Movies[i].likes)
-  //       let likedValue = this.parentNode.querySelector("#likeValue").innerHTML;
-  //       console.log(likedValue);
-  //     }
-  //   })
-  // })
+function whatvs(id){
+var currentLikes = document.querySelectorAll("#likeValue");
+for (i = 0; i < currentLikes.length; i++){
+  var aa = currentLikes.item(i);
+  let bb = aa.innerHTML;
+  console.log(aa);
+  localStorage.setItem("key", aa)
+  localStorage.getItem("key");
+  }
+  return aa
+}
+whatvs();
 
