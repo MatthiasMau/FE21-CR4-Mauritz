@@ -1,12 +1,5 @@
 let movieData = JSON.parse(movies);
 console.log(movieData);
-//putting the JSON into a local storage
-
-// localStorage.setItem("Movies", JSON.stringify(movieData));
-// console.log(localStorage.Movies);
-// let getLocal = JSON.parse(localStorage.getItem(""));
-// console.log(localStorage.key(1));
-// console.log(getLocal)
 
 function generateHTML(){
   let cardGenerator = "";
@@ -32,19 +25,14 @@ function generateHTML(){
 }
 return cardGenerator
 }
-
-
-
 document.getElementById("content").innerHTML += generateHTML();
 
 let likeBtns = document.querySelectorAll("#likeBtn");
 let sortBtn = document.querySelector("#sortBtn");
-// let likedValue = document.querySelectorAll("#likeValue");
-// console.log(likedValue)
 
 likeBtns.forEach(function(currentBtn){ // we take the button #like, the forEach loops goes over and attaches an event listener to each #like 
   currentBtn.addEventListener("click", function(){
-      console.log(this.parentNode.querySelector("#likeValue")); //this in an eventlistener 
+      console.log(this.parentNode.querySelector("#likeValue")); //.this in an eventlistener refers to the element the event is called on. SO when we call this on the ForEach button, we get access to all btns as individuals
       let likedValue = this.parentNode.querySelector("#likeValue").innerHTML; //then declare a variable that will go into the parentNode of the pressed button and access teh innerHTML of the #likeValue
       // console.log(typeof likedValue);
       likedValue = parseInt(likedValue); //return it as an int because JSON. Need to regrab the the number of likes, and make that string = int + 1 every time eventlistener is called
@@ -52,21 +40,16 @@ likeBtns.forEach(function(currentBtn){ // we take the button #like, the forEach 
   })
 })
 
-let desc= false;
-sortBtn.addEventListener("click", function(){
-  let array = sort_array_by(funkyfunction(), "likes", desc)
-  console.log(array)
-})
+sortBtn.addEventListener("click", sortFunction);
 
 
-function funkyfunction(array){
- let list_items = document.querySelectorAll("#likeValue");
-//  list.innerHTML = ""
- for (let i = 0; i < list_items.length; i++){
-   var array = list_items[i]
-   console.log(array)
+function sortFunction(){
+ let currentLikes = document.querySelectorAll("#likeValue"); //gather the items in a nodelist.
+ currentLikes = Object.entries(currentLikes); //put them into an array.
+ for (i = 0; i < currentLikes.length; i++){ //iterate through them
+   var likesArray = currentLikes[i];
+   console.log(likesArray[1]); //log the 1st value of the array.? I think.
+  //  I cant seem to make the leap in logic to then process the items the sort button is writing in the console.log
  }
- return array
+//  console.log(likesArray[1])
 }
-let array = funkyfunction();
-console.log(array);

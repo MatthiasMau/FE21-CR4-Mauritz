@@ -4,4 +4,8 @@
   max-width: 100%;
   padding: 1%;
 }
+
+#sortBtn {
+  cursor: not-allowed;
+}
 /*# sourceMappingURL=styles.css.map */
